@@ -1,0 +1,74 @@
+{% load static %}
+<header id="header" class="bg-white text-black fixed top-0 left-0 w-full z-50 shadow-md">
+  <div class="container mx-auto flex items-center justify-between py-1 px-6">
+    <!-- Logo Section -->
+    <div class="shrink-0">
+      <img class="w-[270px] h-[105px]" src="{% static '/images/headerLogo.png' %}" alt="Company Logo">
+    </div>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex space-x-20 font-roboto mr-4">
+      <a href="#home" class="text-base font-semibold text-black hover:text-[#d82530] scroll-link">Home</a>
+      <a href="#about" class="text-base font-semibold text-black hover:text-[#d82530] scroll-link">About Us</a>
+      <a href="#our-products" class="text-base font-semibold text-black hover:text-[#d82530] scroll-link">Our Products</a>
+      <a href="#our-location" class="text-base font-semibold text-black hover:text-[#d82530] scroll-link">Shops</a>
+      <a href="#contact-us" class="text-base font-semibold text-black hover:text-[#d82530] scroll-link">Contact</a>
+    </nav>
+
+    <!-- Mobile Menu Button -->
+    <div class="md:hidden">
+      <button id="mobile-menu-button" class="text-black focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <nav id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-md">
+      <a href="#home" class="block px-4 py-2 text-black hover:bg-gray-100 scroll-link">Home</a>
+      <a href="#about" class="block px-4 py-2 text-black hover:bg-gray-100 scroll-link">About Us</a>
+      <a href="#our-products" class="block px-4 py-2 text-black hover:bg-gray-100 scroll-link">Our Products</a>
+      <a href="#our-location" class="block px-4 py-2 text-black hover:bg-gray-100 scroll-link">Shops</a>
+      <a href="#contact-us" class="block px-4 py-2 text-black hover:bg-gray-100 scroll-link">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  // Handle mobile menu toggle
+  const menuButton = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  menuButton.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+
+  // Get header height and add extra offset
+  const header = document.getElementById('header');
+  const headerHeight = header.offsetHeight;
+  const extraOffset = 20; // Additional offset in pixels
+
+  // Handle smooth scrolling with offset for all navigation links
+  document.querySelectorAll('.scroll-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+
+      // Close mobile menu if open
+      mobileMenu.classList.add('hidden');
+
+      // Get the target section
+      const targetId = this.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetId);
+
+      if (targetSection) {
+        const targetPosition = targetSection.offsetTop - headerHeight - extraOffset;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+</script>

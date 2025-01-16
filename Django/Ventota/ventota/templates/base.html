@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Ventota{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    {% block extra_head %}{% endblock %}
+</head>
+<body class="bg-gray-100">
+    <!-- Header -->
+    {% include 'header.html' %}
+
+    <!-- Main Content -->
+    <div class="min-h-screen">
+        {% block content %}{% endblock %}
+    </div>
+
+    <!-- Footer -->
+    {% include 'footer.html' %}
+
+</body>
+</html>

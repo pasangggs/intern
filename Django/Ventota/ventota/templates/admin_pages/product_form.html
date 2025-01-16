@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>{% if product %}Update{% else %}Create{% endif %} Product</h1>
+
+  <!-- Display the form for creating or updating the product -->
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    
+    <!-- Form Fields -->
+    <div class="form-group">
+      <label for="id_name">Product Name</label>
+      {{ form.name }}  <!-- Render the name field -->
+    </div>
+
+    <div class="form-group">
+      <label for="id_image">Product Image</label>
+      {{ form.image }}  <!-- Render the image field -->
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary">
+      {% if product %}Update{% else %}Create{% endif %}
+    </button>
+  </form>
+
+  <!-- Back link to dashboard -->
+  <br><br>
+  <a href="{% url 'dashboard' %}" class="btn btn-secondary">Back to Dashboard</a>
+
+  {% if product %}
+    <!-- Option to delete the product if updating -->
+    <form action="{% url 'product_delete' pk=product.pk %}" method="post" style="display:inline;">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-danger">Delete Product</button>
+    </form>
+  {% endif %}
+{% endblock %}

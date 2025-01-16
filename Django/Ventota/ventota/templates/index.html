@@ -3,20 +3,80 @@
 
 {% block content %}
 <div class="bg-white" id="home">
-    <section class="bg-cover-full bg-center flex items-center justify-center mt-[100px]"
-             style="background-image: url('{% static 'images/bannerM.png' %}'); min-height: 580px;">
-        <div class="text-white p-10 rounded-md max-w-md text-left mr-36">
-            <p class="text-2xl font-Roboto transform translate-x-96">
-                Leading innovation & setting new
-                <span class="block mt-2"> <!-- Adds margin-top to next line -->
-                    Standards of excellence Across
-                </span>
-                <span class="block mt-2">
-                    Diverse global industries.
-                </span>
-            </p>
-        </div>
-    </section>
+   <section
+    class="bg-cover-full bg-center flex items-center justify-center mt-[100px] sm:min-h-[400px] sm:h-auto"
+    style="background-image: url('{% static 'images/bannerM.png' %}'); min-height: 580px;">
+    <div class="text-white p-10 rounded-md max-w-md text-left mr-36">
+        <p class="text-2xl font-Roboto transform translate-x-96">
+            Leading innovation & setting new
+            <span class="block mt-2">
+                Standards of excellence Across
+            </span>
+            <span class="block mt-2">
+                Diverse global industries.
+            </span>
+        </p>
+    </div>
+</section>
+
+
+<style>
+    /* For smaller screens */
+    @media (max-width: 768px) {
+        .bg-cover-full {
+            background-size: cover;
+            background-position: center;
+        }
+
+        .mt-[100px] {
+            margin-top: 50px; /* Reduced margin for smaller screens */
+        }
+
+        .mr-36 {
+            margin-right: 20px; /* Reduced right margin for smaller screens */
+        }
+
+        .text-2xl {
+            font-size: 1.5rem; /* Smaller font size for text on smaller screens */
+        }
+
+        .translate-x-96 {
+            transform: translateX(0); /* Remove horizontal translation */
+        }
+
+        .p-10 {
+            padding: 8px; /* Reduced padding for smaller screens */
+        }
+
+        .max-w-md {
+            max-width: 90%; /* Allow for a more flexible width on smaller screens */
+        }
+    }
+
+    /* For even smaller screens (mobile phones) */
+    @media (max-width: 480px) {
+        .text-2xl {
+            font-size: 1.25rem; /* Further reduce font size */
+        }
+
+        .mt-[100px] {
+            margin-top: 30px; /* Reduce top margin further */
+        }
+
+        .mr-36 {
+            margin-right: 10px; /* Further reduce right margin */
+        }
+
+        .p-10 {
+            padding: 5px; /* Further reduce padding */
+        }
+
+        .max-w-md {
+            max-width: 95%; /* Even more flexible width */
+        }
+    }
+</style>
+
 
     <!-- Ventota Retail -->
 <div class="flex flex-col items-start mt-10 ml-24 md:ml-14">
@@ -25,87 +85,86 @@
 
     <!-- Centered grid content -->
     <div class="flex justify-center w-full">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-32 md:gap-x-80 relative" style="left: -40px;">
+        <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-x-32 md:gap-x-80 relative" style="left: -40px;">
             <div class="flex flex-col items-center">
-                <img src="{% static 'images/Vector1.png' %}" alt="Logo 1" class="w-20 h-auto ml-2 mt-1">
+                <img src="{% static 'images/Vector1.png' %}" alt="Logo 1" class="w-14 md:w-20 h-auto ml-2 mt-1">
                 <p class="text-center text-[105%] font-bold text-[#d82530] mt-4">Founded</p>
                 <p class="text-center text-[180%] font-semi-bold mt-1">2018</p>
             </div>
             <div class="flex flex-col items-center">
-                <img src="{% static 'images/Vector2.png' %}" alt="Logo 2" class="w-20 h-auto mt-3">
+                <img src="{% static 'images/Vector2.png' %}" alt="Logo 2" class="w-14 md:w-20 h-auto mt-3">
                 <p class="text-center text-[105%] font-bold text-[#d82530] mt-3">Stores</p>
-                <p class="text-center text-[180%]  font-semi-bold mt-1">75+</p>
+                <p class="text-center text-[180%] font-semi-bold mt-1">75+</p>
             </div>
             <div class="flex flex-col items-center">
-                <img src="{% static 'images/Vector3.png' %}" alt="Logo 3" class="w-20 h-auto">
+                <img src="{% static 'images/Vector3.png' %}" alt="Logo 3" class="w-14 md:w-20 h-auto">
                 <p class="text-center text-[105%] font-bold text-[#d82530] mt-4">Employees</p>
-                <p class="text-center text-[180%]  font-semi-bold mt-1">500+</p>
+                <p class="text-center text-[180%] font-semi-bold mt-1">500+</p>
             </div>
             <div class="flex flex-col items-center">
-                <img src="{% static 'images/Vector4.png' %}" alt="Logo 4" class="w-20 h-auto">
+                <img src="{% static 'images/Vector4.png' %}" alt="Logo 4" class="w-14 md:w-20 h-auto">
                 <p class="text-center text-[105%] font-bold text-[#d82530] mt-4">Revenue</p>
-                <p class="text-center text-[180%]  font-semi-bold mt-1">$30M</p>
+                <p class="text-center text-[180%] font-semi-bold mt-1">$30M</p>
             </div>
         </div>
     </div>
 </div>
 
 
-    <!-- Ventota Description -->
-    <div class="flex flex-col md:flex-row items-center justify-between mt-16 px-4 md:px-20 relative" style="right: -1.5in;">
+<!-- Ventota Description -->
+<div class="flex flex-col md:flex-row items-center justify-center mt-16 px-4 md:px-20">
+    <p class="text-base md:text-[20px] text-center font-semibold font-roboto w-full md:w-2/3 mt-14">
+        <span class="block mt-2">
+            <span class="font-bold">Ventota Retail</span>
+            is a rapidly growing retail company<br>
+        </span>
+        <span class="block mt-1">
+            currently operating over 75 stores of<br>
+        </span>
+        <span class="block mt-1">
+            Miniso, a popular Japanese lifestyle brand, across India.<br>
+        </span>
+        <span class="block mt-1">
+            The revenue for FY 2023 – 24 is at ~USD 30 million<br>
+            (approx.).
+        </span>
+    </p>
 
-        <p class="text-[23px] text-center md:text-center w-full md:w-2/3 mt-14 mr-32" style="font-family: 'Roboto', sans-serif;">
-    <span class="block mt-2">
-        <span class="font-bold">Ventota Retail</span>
-        is a rapidly growing retail company<br>
-    </span>
-    <span class="block mt-2">
-        currently operating over 75 stores of<br>
-    </span>
-    <span class="block mt-2">
-        Miniso, a popular Japanese lifestyle brand, across India.<br>
-    </span>
-    <span class="block mt-2">
-        The revenue for FY 2023 – 24 is at ~USD 30 million<br>
-        (approx.).
-    </span>
-</p>
-        <div class="flex flex-row mt-36 md:mt-2 mr-20 space-x-8">
-    <img src="{% static 'images/minisoBag.png' %}" alt="Logo 1" class="size-[30%]">
-    <img src="{% static 'images/miniso.png' %}" alt="Logo 2" class="size-[30%] mt-28">
+    <div class="flex flex-row mt-8 md:mt-4 space-x-8 justify-center">
+        <img src="{% static 'images/minisoBag.png' %}" alt="Logo 1" class="size-[25%]">
+        <img src="{% static 'images/miniso.png' %}" alt="Logo 2" class="size-[36%] mt-[12vh]">
+    </div>
 </div>
 
+<!-- Group Objective -->
+<section class="flex flex-col lg:flex-row items-center mt-20 px-4">
+    <div class="w-full lg:w-1/3 mb-8 lg:mb-0">
+        <h2 class="text-2xl md:text-3xl font-bold font-Roboto mb-8 mr-52 md:ml-12">Group Objective</h2>
+        <img src="{% static 'images/groupobj.png' %}" alt="Group Objective Image" class="size-[70%] mx-auto lg:ml-56">
     </div>
+    <div class="w-full lg:w-2/3 mt-4">
+        <h2 class="text-2xl md:text-4xl mb-6 text-center" style="font-family: 'Roboto Serif', serif;">From Retail Roots to Global Reach,<br><span class="font-bold">VENTOTA</span> Leads the Way.</h2>
+        <p class="text-lg md:text-2xl text-center font-roboto" style="font-family: 'Roboto Serif', serif;">The company has swiftly expanded its footprint and<br>
+            continues to focus on delivering affordable, high-quality<br>
+            products to its customers. With a presence in 20 states<br> and 30 cities, the company has firmly established itself in<br>
+            the Indian retail market.
+        </p>
+    </div>
+</section>
 
-    <!-- Group Objective -->
-    <section class="flex flex-col lg:flex-row items-center mt-20 px-4">
-        <div class="w-full lg:w-1/3 mb-8 lg:mb-0">
-            <h2 class="text-3xl font-bold font-Roboto mb-8 mr-52 md:ml-12">Group Objective</h2>
-            <img src="{% static 'images/groupobj.png' %}" alt="Group Objective Image" class="size-[70%] mx-auto lg:ml-56">
-        </div>
-        <div class="w-full lg:w-2/3 mt-4 font-roboto">
-            <h2 class="text-4xl mb-6 text-center">From Retail Roots to Global Reach,<br><span class="font-bold">VENTOTA</span> Leads the Way.</h2>
-            <p class="text-2xl text-center">The company has swiftly expanded its footprint and<br>
-                continues to focus on delivering affordable, high-quality<br>
-                products to its customers. With a presence in 20 states<br> and 30 cities, the company has firmly established itself in<br>
-                the Indian retail market.
+<div class="flex flex-col items-center justify-center my-10">
+    <div class="flex flex-col lg:flex-row items-center justify-center gap-12">
+        <h1 class="text-center lg:text-right text-[400%] md:text-[700%] lg:mr-12" style="font-family: 'Roboto Serif', serif;">GUESS</h1>
+        <div class="flex flex-row items-center gap-10">
+            <p class="text-center text-lg md:text-2xl lg:text-xl mt-4 lg:mt-2 max-w-2xl" style="font-family: 'Roboto Serif', serif;">
+                We have also collaborated with <span class="font-bold">GUESS</span> for the Accessories segment<br>
+                wherein we are looking to open stores in 2025.
             </p>
+            <div>
+                <img src="{% static 'images/headerLogo.png' %}" alt="Guess Logo" class="size-[110%]">
+            </div>
         </div>
-    </section>
-
-    <div class="flex flex-col items-center justify-center my-10">
-   <div class="flex flex-col lg:flex-row items-center justify-center gap-12">
-       <h1 class="text-center lg:text-right text-[700%] lg:mr-12" style="font-family: 'Roboto Serif', serif;">GUESS</h1>
-       <div class="flex flex-row items-center gap-10">
-           <p class="text-center text-2xl lg:text-xl mt-4 lg:mt-2 max-w-2xl" style="font-family: 'Roboto Serif', serif;">
-               We have also collaborated with <span class="font-bold">GUESS</span> for the Accessories segment<br>
-               wherein we are looking to open stores in 2025.
-           </p>
-           <div>
-               <img src="{% static 'images/headerLogo.png' %}" alt="Guess Logo" class="size-[110%]">
-           </div>
-       </div>
-   </div>
+    </div>
 </div>
 
 
@@ -119,22 +178,25 @@
   </div>
 
 <!-- Banner Section -->
-<div class="relative bg-cover bg-center h-[500px]" style="background-image: url('{% static 'images/ventotaBanner2.png' %}');">
+<div class="relative bg-cover bg-center h-[300px] md:h-[400px] lg:h-[500px]" style="background-image: url('{% static 'images/ventotaBanner2.png' %}');">
   <!-- Left Text Content -->
-  <div class="absolute top-1/4 left-32 text-white font-roboto ml-6">
-    <p class="text-4xl mt-4 gap-8 font-roboto font-bold">
+  <div class="absolute top-1/4 left-4 md:left-16 lg:left-32 text-white font-roboto ml-2 md:ml-4 lg:ml-6">
+    <p class="text-2xl md:text-3xl lg:text-4xl mt-2 md:mt-3 lg:mt-4 gap-4 md:gap-6 lg:gap-8 font-roboto font-bold">
       Expanding Horizons:
-      <span style="display: block; margin-top: 8px;">Excellence Across</span>
-      <span style="display: block; margin-top: 8px;">Key Industries</span>
+      <span style="display: block; margin-top: 4px md:margin-top: 6px lg:margin-top: 8px;">Excellence Across</span>
+      <span style="display: block; margin-top: 4px md:margin-top: 6px lg:margin-top: 8px;">Key Industries</span>
     </p>
   </div>
 
   <!-- Right Text Content -->
-  <div class="absolute top-1/4 right-28 text-white text-right font-roboto">
-      <h3 class="text-2xl text-center font-semibold">From Retails Roots to Global Reach,<span style="display: block; margin-top: 8px;">VENTOTA Leads the way</span></h3>
-    <p class="text-lg text-center mt-4 gap-6">
-      We are committed to excellence in every aspect<span style="display: block; margin-top: (-0.1px);">
-        of our operations, fostering trust and </span>satisfaction.
+  <div class="absolute top-1/4 right-4 md:right-16 lg:right-28 text-white text-right font-roboto max-w-[200px] md:max-w-[300px] lg:max-w-none">
+    <h3 class="text-lg md:text-xl lg:text-2xl text-center font-semibold">
+      From Retails Roots to Global Reach,
+      <span style="display: block; margin-top: 4px md:margin-top: 6px lg:margin-top: 8px;">VENTOTA Leads the way</span>
+    </h3>
+    <p class="text-sm md:text-base lg:text-lg text-center mt-2 md:mt-3 lg:mt-4 gap-3 md:gap-4 lg:gap-6">
+      We are committed to excellence in every aspect
+      <span style="display: block; margin-top: (-0.1px);">of our operations, fostering trust and </span>satisfaction.
     </p>
   </div>
 </div>
@@ -145,7 +207,7 @@
   <section class="text-center mt-8" id="about"></section>
       <div>
     <h2 class="text-2xl text-center font-bold mb-4 font-roboto">About Company</h2>
-    <p class="text-center font-semibold text-lg mb-10 font-calibri">
+    <p class="text-center text-lg mb-10 font-roboto">
       <strong>Ventota Global Ingredients (VGI)</strong>, founded in 2020 in Kolkata, has rapidly become a leading distribution house in India. With over 20 years
         <br> of experience in Distribution and Trading, the founders of VGI have emphasized a transformative approach to deliver high-quality food
         <br> ingredients. Within a short period of time, we have become one of the most valued and trusted partners for well-known brands across
@@ -194,26 +256,13 @@
   <div class="swiper products-carousel relative">
     <div class="swiper-wrapper">
       <!-- Static Product Slides -->
+    {% for product in products %}
       <div class="swiper-slide">
         <div class="w-72 h-72 rounded-md overflow-hidden shadow-lg mx-auto">
-          <img src="{% static 'images/product1.jpg' %}" alt="Product 1" class="w-full h-full object-cover">
+          <img src="{{ product.image.url }}" alt="{{ product.name }}" class="w-full h-full object-cover">
         </div>
       </div>
-      <div class="swiper-slide">
-        <div class="w-72 h-72 rounded-md overflow-hidden shadow-lg mx-auto">
-          <img src="{% static 'images/product2.jpg' %}" alt="Product 2" class="w-full h-full object-cover">
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="w-72 h-72 rounded-md overflow-hidden shadow-lg mx-auto">
-          <img src="{% static 'images/product3.jpg' %}" alt="Product 3" class="w-full h-full object-cover">
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="w-72 h-72 rounded-md overflow-hidden shadow-lg mx-auto">
-          <img src="{% static 'images/product4.jpg' %}" alt="Product 4" class="w-full h-full object-cover">
-        </div>
-      </div>
+    {% endfor %}
     </div>
     <!-- Navigation buttons -->
     <div class="swiper-button-next"></div>
@@ -286,20 +335,23 @@
 
 
     <!-- Our Location Section -->
-<div class="mt-16 items-center" id="our-location">
-  <h2 class="text-3xl font-bold text-left mb-6 ml-16 font-roboto">Our Location</h2>
-  <div class="flex justify-center space-x-32 items-start">
+<div class="mt-16 items-center px-4 md:px-0" id="our-location">
+  <h2 class="text-2xl md:text-3xl font-bold text-center md:text-left mb-6 md:ml-16 font-roboto">Our Location</h2>
+
+  <div class="flex flex-col md:flex-row justify-center md:space-x-32 items-center md:items-start">
     <!-- India Map Section -->
-    <div class="w-[26rem] h-auto rounded-md overflow-hidden mr-6">
+    <div class="w-full md:w-[26rem] h-auto rounded-md overflow-hidden mb-8 md:mb-0 md:mr-6">
       <img src="{% static 'images/map.png' %}" alt="Map" class="w-full h-full object-cover">
     </div>
+
     <!-- West Bengal Map Section -->
-    <div class="flex flex-col items-center mt-16">
-      <div class="w-60 h-auto rounded-md overflow-hidden mb-6 ml-8">
+    <div class="flex flex-col items-center mt-4 md:mt-16">
+      <div class="w-48 md:w-60 h-auto rounded-md overflow-hidden mb-6 md:ml-8">
         <img src="{% static 'images/WestBengal.jpg' %}" alt="West Bengal Map" class="w-full h-full object-cover">
       </div>
+
       <!-- Description -->
-      <p class="text-[20px] text-black text-center ml-4" style="font-family: 'Calibri';">
+      <p class="text-lg md:text-[20px] text-black text-center px-4 md:ml-4 max-w-sm" style="font-family: 'Calibri';">
         We are a pan India Based company with origins from 'KOLKATA' West Bengal
       </p>
     </div>
@@ -318,33 +370,33 @@
 </div>
 
 <!-- Contact Us Section -->
-<div class="mt-4" id="contact-us">
-  <h2 class="text-3xl font-bold text-left mb-6 ml-16 font-roboto">Contact us</h2>
-  <div class="flex justify-center items-center space-x-16p">
+<div class="mt-4 px-4 lg:px-0" id="contact-us">
+  <h2 class="text-2xl lg:text-3xl font-bold text-left mb-6 ml-4 lg:ml-16 font-roboto">Contact us</h2>
+  <div class="flex justify-center items-center">
     <!-- Image Section -->
-      <div class="relative bg-cover bg-center w-[91%] h-[300px]" style="background-image: url('{% static 'images/rectangleImg.png' %}');">
-    <!-- Contact Details Section -->
-     <div class="flex flex-col space-y-2 mt-6 font-roboto">
-      <h3 class="text-[40px] font-bold text-black text-center" >We'd Love to hear<br> from you</h3>
-      <p class="text-sm text-black font-semibold text-center">
-        We are committed to excellence in every aspect of our <br>operations, fostering trust and satisfaction.
-      </p>
-      <p class="text-lg text-black font-semibold text-center">
-        Info@ventota.com.in
-      </p>
-     </div>
-     </div>
+    <div class="relative bg-cover bg-center w-[95%] lg:w-[91%] h-[250px] lg:h-[300px]" style="background-image: url('{% static 'images/rectangleImg.png' %}');">
+      <!-- Contact Details Section -->
+      <div class="flex flex-col space-y-2 mt-16 lg:mt-16 font-roboto">
+        <h3 class="text-3xl lg:text-[40px] font-bold text-black text-center">We'd Love to hear<br> from you</h3>
+        <p class="text-xs lg:text-sm text-black font-semibold text-center px-2 lg:px-0">
+          We are committed to excellence in every aspect of our <br>operations, fostering trust and satisfaction.
+        </p>
+        <p class="text-base lg:text-lg text-black font-semibold text-center">
+          Info@ventota.com.in
+        </p>
+      </div>
+    </div>
   </div>
 </div>
 
 <!-- Contact Form Section -->
-<div class="mt-16 flex justify-center items-start">
-  <form class="w-[80%]">
+<div class="mt-8 lg:mt-16 flex justify-center items-start">
+  <form class="w-[90%] lg:w-[80%]">
     <!-- Full Name and Email Row -->
-    <div class="grid grid-cols-2 gap-48 mb-4">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-48 mb-4">
       <!-- Full Name -->
-      <div class="flex items-center space-x-2">
-        <label for="full-name" class="text-base font-medium text-black w-1/4 text-right">Full Name:</label>
+      <div class="flex flex-col lg:flex-row lg:items-center lg:space-x-2">
+        <label for="full-name" class="text-sm lg:text-base font-medium text-black lg:w-1/4 lg:text-right mb-1 lg:mb-0">Full Name:</label>
         <input
           type="text"
           id="full-name"
@@ -352,8 +404,8 @@
         >
       </div>
       <!-- Email -->
-      <div class="flex items-center space-x-2">
-        <label for="email" class="text-base font-medium text-black w-1/4 text-right">Email:</label>
+      <div class="flex flex-col lg:flex-row lg:items-center lg:space-x-2 mt-4 lg:mt-0">
+        <label for="email" class="text-sm lg:text-base font-medium text-black lg:w-1/4 lg:text-right mb-1 lg:mb-0">Email:</label>
         <input
           type="email"
           id="email"
@@ -363,10 +415,10 @@
     </div>
 
     <!-- Address and Phone Row -->
-    <div class="grid grid-cols-2 gap-48 mb-4">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-48 mb-4">
       <!-- Address -->
-      <div class="mt-6 flex items-center space-x-2">
-        <label for="address" class="text-base text-start px-6   font-medium text-black w-1/4 text-right">Address:</label>
+      <div class="flex flex-col lg:flex-row lg:items-center lg:space-x-2 mt-4 lg:mt-6">
+        <label for="address" class="text-sm lg:text-base font-medium text-black lg:w-1/4 lg:text-right mb-1 lg:mb-0">Address:</label>
         <input
           type="text"
           id="address"
@@ -374,8 +426,8 @@
         >
       </div>
       <!-- Phone -->
-      <div class="mt-6 flex items-center space-x-2">
-        <label for="phone" class="text-base font-medium text-black w-1/4 text-right">Phone:</label>
+      <div class="flex flex-col lg:flex-row lg:items-center lg:space-x-2 mt-4 lg:mt-6">
+        <label for="phone" class="text-sm lg:text-base font-medium text-black lg:w-1/4 lg:text-right mb-1 lg:mb-0">Phone:</label>
         <input
           type="text"
           id="phone"
@@ -385,8 +437,8 @@
     </div>
 
     <!-- Textarea -->
-    <div class="mt-10">
-      <label for="feedback" class="block text-base mb-2 font-medium text-black">What do you think about us?</label>
+    <div class="mt-6 lg:mt-10">
+      <label for="feedback" class="block text-sm lg:text-base mb-2 font-medium text-black">What do you think about us?</label>
       <textarea
         id="feedback"
         rows="4"
@@ -398,7 +450,7 @@
     <div class="flex justify-center mt-6 mb-10">
       <button
         type="submit"
-        class="px-3 py-1 bg-[#B2AEAE] text-black text-base font-semibold border border-black rounded-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        class="px-6 py-2 bg-[#B2AEAE] text-black text-sm lg:text-base font-semibold border border-black rounded-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
         Submit
       </button>
     </div>
