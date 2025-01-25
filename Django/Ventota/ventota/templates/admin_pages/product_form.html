@@ -13,7 +13,7 @@
     <input type="text" name="name" value="{{ product.name|default_if_none:'' }}" required>
 
     <label for="image">Product Image:</label>
-    <input type="file" name="image">
+    <input type="file" name="image" value="{{ product.image|default_if_none:'' }}" required>
 
     <button type="submit">{% if product %}Update{% else %}Create{% endif %}</button>
 </form>
@@ -21,6 +21,7 @@
   <!-- Back link to dashboard -->
   <br><br>
   <a href="{% url 'dashboard' %}" class="btn btn-secondary">Back to Dashboard</a>
+  
 
   {% if product %}
     <!-- Option to delete the product if updating -->
