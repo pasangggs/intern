@@ -477,27 +477,7 @@
         Submit
       </button>
     </div>
-      <!-- EmailJS Script -->
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    emailjs.init("yBmS_VWHBis6Hz3Lf"); // Replace with your actual EmailJS Public Key
-
-    document.getElementById("contact-form").addEventListener("submit", function(event) {
-      event.preventDefault();
-
-      emailjs.sendForm("service_4d0qiyp", "template_5o7fzxj", this)
-        .then(function(response) {
-          console.log("SUCCESS!", response.status, response.text);
-          alert("Message Sent Successfully!");
-        }, function(error) {
-          console.error("Failed to send message:", error.text);
-          alert("Failed to send message. Check console for details.");
-        });
-    });
-  });
-</script>
-  </form>
+    </form>
 </div>
 
 </div>

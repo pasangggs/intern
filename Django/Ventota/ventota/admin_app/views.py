@@ -3,11 +3,11 @@ from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from .models import Product
 from django.contrib.auth.decorators import login_required
+from .utils import send_email_to_client
 # Create your views here.
-# def dashboard(request):
-#     if not request.user.is_authenticated:
-#         return redirect('login')
-    # return render(request, 'admin_pages/dashboard.html')
+def send_email(request):
+    send_email_to_client()
+    return redirect('/')
 
 def admin_login(request):
     if request.method == 'POST':
